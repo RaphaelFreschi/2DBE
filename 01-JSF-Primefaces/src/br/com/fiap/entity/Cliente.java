@@ -23,6 +23,16 @@ public class Cliente {
 	private Calendar dataNascimento;
 	
 	private int rating;
+	
+	private String foto; 
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
 
 	public int getCodigo() {
 		return codigo;

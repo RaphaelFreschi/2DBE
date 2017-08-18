@@ -22,6 +22,35 @@ public class ClienteDAOImpl extends GenericDAOImpl<Cliente, Integer> implements 
 			.getResultList();
 	}
 
+	@Override
+	public List<String> completarPorNome(String texto) {
+		return em.createQuery("select c.nome from Cliente c "
+				+ "where c.nome like :n",String.class)
+				.setParameter("n", "%"+texto+"%")
+				.getResultList();
+	}
+
+	@Override
+	public long contarPorRating(int rating) {
+		return em.createQuery("select count(c) "
+				+ "from Cliente c where c.rating = :r"
+				,Long.class)
+				.setParameter("r", rating)
+				.getSingleResult();
+	}
+
+	@Override
+	public long contarPorMesAnivesario(int mes) {
+		return em.createQuery("select count(c) from "
+				+ "Cliente c where "
+				+ "month(c.dataNascimento) = :m",Long.class)
+				.setParameter("m", mes)
+				.getSingleResult();
+	}
+
 	
 
 }
+
+
+

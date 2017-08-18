@@ -9,5 +9,10 @@ public interface ClienteDAO
 
 	List<Cliente> buscarPorNome(String nome);
 
+	List<String> completarPorNome(String texto);
+	
+	long contarPorRating(int rating);
+	
+	long contarPorMesAnivesario(int mes);
 	
 }

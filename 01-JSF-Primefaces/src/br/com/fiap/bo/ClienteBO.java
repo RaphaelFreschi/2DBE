@@ -75,12 +75,27 @@ public class ClienteBO {
 		}
 	}
 
-
 	public List<Cliente> buscarPorNome(String nome) {
 		ClienteDAO dao = new ClienteDAOImpl(
 			EntityManagerFactorySingleton.getInstance()
 			.createEntityManager());
 		return dao.buscarPorNome(nome);
+	}
+
+	public List<String> completarPorNome(String texto) {
+		ClienteDAO dao = new ClienteDAOImpl(fabrica.createEntityManager());
+		return dao.completarPorNome(texto);
+	}
+	
+	public long contarPorRating(int rating){
+		ClienteDAO dao = new ClienteDAOImpl(
+				fabrica.createEntityManager());
+		return dao.contarPorRating(rating);
+	}
+	
+	public long contarPorMes(int mes){
+		ClienteDAO dao = new ClienteDAOImpl(fabrica.createEntityManager());
+		return dao.contarPorMesAnivesario(mes);
 	}
 	
 }

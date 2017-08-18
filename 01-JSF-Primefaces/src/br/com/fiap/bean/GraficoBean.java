@@ -31,14 +31,13 @@ public class GraficoBean {
 		pizza.setLegendPosition("e");
 		
 		//Carregar as informações do gráfico de linha
-		
 		linha = new LineChartModel();
 		linha.setLegendPosition("e");
 		linha.getAxes().put(AxisType.X, new CategoryAxis("Mes"));
 		
 		LineChartSeries serie = new LineChartSeries();
 		serie.setLabel("Cliente");
-		for(int i = 1; i <= 12; i++){
+		for (int i =1; i<=12; i++){
 			serie.set(i, bo.contarPorMes(i));
 		}
 		
@@ -60,7 +59,5 @@ public class GraficoBean {
 	public void setLinha(LineChartModel linha) {
 		this.linha = linha;
 	}
-	
-	
 	
 }

@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -24,15 +25,8 @@ public class Cliente {
 	
 	private int rating;
 	
-	private String foto; 
-
-	public String getFoto() {
-		return foto;
-	}
-
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
+	@Lob
+	private byte[] foto;
 
 	public int getCodigo() {
 		return codigo;
@@ -73,5 +67,15 @@ public class Cliente {
 	public void setRating(int rating) {
 		this.rating = rating;
 	}
+
+	public byte[] getFoto() {
+		return foto;
+	}
+
+	public void setFoto(byte[] foto) {
+		this.foto = foto;
+	}
+	
+	
 	
 }

@@ -75,12 +75,14 @@ public class ClienteBO {
 		}
 	}
 
+
 	public List<Cliente> buscarPorNome(String nome) {
 		ClienteDAO dao = new ClienteDAOImpl(
 			EntityManagerFactorySingleton.getInstance()
 			.createEntityManager());
 		return dao.buscarPorNome(nome);
 	}
+
 
 	public List<String> completarPorNome(String texto) {
 		ClienteDAO dao = new ClienteDAOImpl(fabrica.createEntityManager());
@@ -94,7 +96,8 @@ public class ClienteBO {
 	}
 	
 	public long contarPorMes(int mes){
-		ClienteDAO dao = new ClienteDAOImpl(fabrica.createEntityManager());
+		ClienteDAO dao = new ClienteDAOImpl(
+				fabrica.createEntityManager());
 		return dao.contarPorMesAnivesario(mes);
 	}
 	

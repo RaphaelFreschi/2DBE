@@ -75,7 +75,7 @@ public class Cliente {
 	public void setFoto(byte[] foto) {
 		this.foto = foto;
 	}
-	
-	
+
+
 	
 }
